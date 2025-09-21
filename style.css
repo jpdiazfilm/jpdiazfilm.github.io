@@ -1,0 +1,465 @@
+@font-face {
+  font-family: "StateWideSoft";
+  src: url("StateWideSoft-Regular.woff2") format("woff2"), url("StateWideSoft-Regular.woff") format("woff");
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "StateWideSoft", Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: 1.2px;
+  line-height: 1.4;
+  color: #333;
+  background-color: #d8c9b6;
+  text-transform: uppercase;
+  overflow-x: hidden;
+}
+
+.container {
+  padding: 25px;
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+/* Logo */
+.logo {
+  position: absolute;
+  top: 25px;
+  left: 25px;
+  color: #4a9999;
+}
+
+.logo img {
+    width: 150px;
+}
+
+.bio {
+  margin-top: 80px;
+  text-align: left;
+  max-width: 400px;
+  margin-left: right;
+  display: none;
+}
+
+.bio-mobile {
+ display: block;
+ text-align: right;
+ font-size: 10px;
+ margin-top: 10px;
+}
+
+@media (max-width: 500px) {
+  * {
+    box-sizing: border-box;
+    max-width: 100%;
+  }
+  
+  body, html {
+    width: 100%;
+    overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .container {
+    padding: 15px;
+    width: 100%;
+    overflow-x: hidden;
+    max-width: 100%;
+  }
+  
+  .bio-mobile {
+    font-size: 10px;
+    padding-right: 0;
+    width: 100%;
+    text-align: right;
+  }
+  
+  .logo img {
+    width: 105px;
+  }
+  
+  .default-still {
+    width: 100%;
+    margin: 0;
+    left: 0;
+  }
+  
+  .filmography-mobile-row {
+    width: 100%;
+  }
+  
+  .title {
+    max-width: 70%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (max-width: 550px) {
+  .bio-mobile {
+    font-size: 10px;
+    padding-right: -25px;
+  }
+
+  .logo img {
+    width: 105px;
+  }
+}
+
+@media (max-width: 450px) {
+  .default-still img {
+    height: 170px;
+  }
+}
+
+.filmography {
+  display: none;
+}
+
+.filmography-mobile h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    width: 50%;
+}
+
+@media (max-width: 550px) {
+    .filmography-mobile h2 {
+        width: 100%
+    }
+}
+
+.filmography-mobile-row {
+    flex-direction: row;
+    display: flex;
+    justify-content: space-between;
+}
+
+.film-list-mobile {
+    text-align: right;
+    padding-right: -25px;
+}
+
+.recommendations-mobile h2 {
+    font-size: 16px;
+    font-weight: normal;
+    margin-bottom: 10px;
+}
+
+@media (max-width: 550px) {
+    .filmography-mobile h2 {
+        font-size: 12px;
+    }
+
+    .recommendations-mobile h2 {
+        font-size: 12px;
+    }
+}
+
+.film-list-mobile {
+    align-self: flex-end;
+}
+
+.film {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0px;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 200px;
+    font-size: 10px;
+}
+
+.social-mobile {
+    display: block;
+    margin-top: 25px;
+}
+  
+.social-mobile p {
+    margin-bottom: 5px;
+    justify-content: space-between;
+    width: 160px;
+    gap: 50px;
+    display: flex;
+    font-size: 10px;
+}
+
+.social-mobile a {
+    font-size: 10px;
+    color: inherit;
+    text-decoration: none;
+}
+
+.recommendations-mobile {
+    display: block;
+    margin-top: 25px;
+    width: 100%;
+}
+  
+.recommendations-mobile ul {
+    list-style: none;
+}
+  
+.recommendations-mobile li {
+    margin-bottom: 5px;
+    display: block;
+}
+
+.recommendations-mobile .artist {
+    white-space: nowrap;
+    width: full;
+    font-size: 10px;
+}
+
+.recommendations-mobile .title {
+    font-size: 10px;
+    vertical-align: top;
+}
+
+.social {
+  margin-top: 20px;
+}
+
+.social p {
+  margin-bottom: 5px;
+  justify-content: space-between;
+  width: 150px;
+  gap: 50px;
+  display: flex;
+}
+
+.social a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.social a:hover {
+  text-decoration: underline;
+}
+
+/* Recommendations */
+.recommendations {
+  margin-top: 20px;
+}
+
+.recommendations h2 {
+  font-size: 12px;
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.recommendations ul {
+  list-style: none;
+}
+
+.recommendations li {
+  margin-bottom: 5px;
+}
+
+/* Desktop Layout */
+@media (min-width: 768px) {
+  .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr;
+    grid-gap: 20px;
+    height: 100vh;
+    max-height: 100vh;
+    overflow: hidden;
+    padding: 50px;
+  }
+
+  .logo {
+    grid-column: 1;
+    grid-row: 1;
+    position: relative;
+    top: 0;
+    left: 0;
+  }
+
+  .logo img {
+    width: 200px;
+  }
+
+  .bio {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 0;
+    text-align: left;
+    align-self: end;
+    display: block;
+  }
+
+  .bio-mobile {
+    display: none;
+  }
+
+  .social {
+    grid-column: 1;
+    grid-row: 2;
+    margin-top: 40px;
+  }
+
+  .recommendations {
+    grid-column: 1;
+    grid-row: 2;
+    align-self: end;
+    margin-bottom: 0;
+  }
+
+  .film-preview {
+    grid-column: 2;
+    grid-row: 2;
+    margin: 0;
+    align-items: center;
+    justify-content: center;
+    align-self: center;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .film-preview img {
+    max-height: 400px;
+  }
+
+  .filmography {
+    grid-column: 2;
+    grid-row: 2;
+    text-align: right;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-self: flex-start;
+  }
+
+  .filmography-mobile {
+    display: none;
+  }
+
+  .social-mobile {
+    display: none;
+    }
+
+  .recommendations-mobile {
+    display: none;
+    }
+
+  .filmography h2 {
+    font-size: 25px;
+    font-weight: normal;
+    margin-bottom: 10px;
+    margin-left: -15px;
+  }
+
+  .film-list {
+    display: flex;
+    flex-direction: column;
+    align-self: flex-end;
+    width: 100%;
+  }
+
+  .default-still {
+    margin-top: 20px;
+    align-self: flex-end;
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+  }
+
+  .default-still img {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .filmDesktop {
+    display: flex;
+    margin-left: auto;
+    margin-right: 0px;
+    cursor: pointer;
+    justify-content: space-between;
+    width: 320px;
+  }
+
+  .year {
+    justify-content: flex-start;
+    margin-bottom: 10px;
+  }
+
+  .filmDesktop:hover {
+    color: #097952a4;
+  }
+
+  .filmDesktop .year {
+    margin-right: 20px;
+  }
+
+  .filmDesktop .title {
+    font-weight: bold;
+  }
+
+  .title  {
+    max-width: 60%;
+  }
+
+  .recommendations .artist {
+    display: inline-block;
+    white-space: nowrap;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.recommendations .title {
+    display: inline-block;
+    vertical-align: top;
+}
+
+}
+
+/* Large Desktop Layout */
+@media (min-width: 1200px) {
+  .container {
+    /* max-width: 1200px; */
+    margin: auto auto;
+  }
+
+  .filmography {
+    display: flex;
+  }
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  width: 100%;
+}
+
+.mobile-still {
+  margin: 50px 0 !important;
+  padding: 0 !important;
+  width: 100vw !important;
+  position: relative !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  max-width: none !important;
+}
+
+.mobile-still img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  max-width: none !important;
+}
