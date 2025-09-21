@@ -230,7 +230,7 @@ body {
 .social p {
   margin-bottom: 5px;
   justify-content: space-between;
-  width: 150px;
+  width: 160px;
   gap: 50px;
   display: flex;
 }
