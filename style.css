@@ -147,10 +147,15 @@ body {
     padding-right: -25px;
 }
 
+.film:hover {
+  text-decoration: underline;
+}
+
 .recommendations-mobile h2 {
     font-size: 16px;
     font-weight: normal;
     margin-bottom: 10px;
+    margin-top: 40px;
 }
 
 @media (max-width: 550px) {
@@ -215,11 +220,11 @@ body {
 .recommendations-mobile .artist {
     white-space: nowrap;
     width: full;
-    font-size: 10px;
+    font-size: 7px;
 }
 
 .recommendations-mobile .title {
-    font-size: 10px;
+    font-size: 7px;
     vertical-align: top;
 }
 
@@ -246,11 +251,12 @@ body {
 
 /* Recommendations */
 .recommendations {
-  margin-top: 20px;
+  margin-top: 105px;
+  font-size: 7px;
 }
 
 .recommendations h2 {
-  font-size: 12px;
+  font-size: 10px;
   font-weight: normal;
   margin-bottom: 10px;
 }
